@@ -36,12 +36,33 @@ int main() {
 
 	//cout << "Your full name is " << fullName << endl;
 	
-	//using cin's getline function it gets everything on that line until the specified amount is reached (in this case 50)
+	//using cin's getline function it gets everything on that line until the specified amount is reached (in this case 50) or enter is pushed 
 	cout << "Enter your full name: ";
 	cin.getline(fullName, 50);
 	cout << "Your full name is " << fullName << endl;
 
+	cout << "---------------------------" << endl;
+	
+	//copies fullName TO temp
+	strcpy_s(temp, fullName);
 
+	//strcmp compairs fullName and temp if both are the same it will output 0
+	if (strcmp(temp, fullName) == 0) {
+		cout << temp << " and " << fullName << " are the same" << endl;
+	}
+	else {
+		cout << temp << " and " << fullName << " are different" << endl;
+	}
+	cout << "---------------------------" << endl;
+
+
+	for (size_t i{ 0 }; i < strlen(fullName); i++) {
+		//isalpha checks to see if it is a letter
+		if (isalpha(fullName[i])) {
+			fullName[i] = toupper(fullName[i]);
+		}
+	}
+	cout << "Your full name is " << fullName << endl;
 
 
 	cout << endl;
