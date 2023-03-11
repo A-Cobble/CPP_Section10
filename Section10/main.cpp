@@ -64,7 +64,17 @@ int main() {
 	}
 	cout << "Your full name is " << fullName << endl;
 
+	cout << "---------------------------" << endl;
+	if (strcmp(temp, fullName) == 0) {
+		cout << temp << " and " << fullName << " are the same" << endl;
+	}
+	else {
+		cout << temp << " and " << fullName << " are different" << endl;
+	}
 
+	cout << "---------------------------" << endl;
+	cout << "Result of comparing " << temp << " and " << fullName << ": " << strcmp(temp, fullName) << endl;
+	cout << "Result of comparing " << fullName << " and " << temp << ": " << strcmp(fullName, temp) << endl;
 	cout << endl;
 	return 0;
 }
