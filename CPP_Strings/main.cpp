@@ -39,7 +39,7 @@ int main() {
 	cout << s4 << " < " << s5 << ": " << (s4 < s5) << endl;
 	cout << s1 << " == " << "Apple" << ": " << (s1 == "Apple") << endl;*/
 
-	//Assignment
+	////Assignment
 	//cout << "\nAssignment" << "\n------------------------------------------" << endl;
 
 	//s1 = "Watermelon";
@@ -55,7 +55,7 @@ int main() {
 	//s3.at(0) = 'P';
 	//cout << "s3 change first letter to 'P': " << s3 << endl; //Prank
 
-	//Concatenation
+	////Concatenation
 	//cout << "\nConcatenation" << "\n---------------------------------------------" << endl;
 
 	//s3 = "Watermelon";
@@ -64,7 +64,7 @@ int main() {
 
 	// //s3 = "nice " + " cold " + s5 + "juice"; // Compiler error
 
-	// // for loop
+	//// for loop
 	//cout << "\nLooping" << "\n-------------------------------------------" << endl;
 	//s1 = "Apple";
 	//for (size_t i{ 0 }; i < s1.length(); i++) {
