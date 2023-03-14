@@ -31,33 +31,73 @@ using namespace std;
 
 int main() {
 
+	//string alphabet{ "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" };
+	//string key{ "XZNLWEBGJHQDYVTKFUOMPCIASRxznlwebgjhqdyvtkfuompciasr" };
+	//string message{};
+	//string codedMessage{};
+	//
+
+	//cout << "Enter your secret message: ";
+	//getline(cin, message);
+
+	//cout << "\nEncrypting message..." << endl;
+
+	//for (size_t i{ 0 }; i < message.length(); i++) {
+	//		size_t position = alphabet.find(message.at(i));
+	//	if (position != string::npos) {
+	//		codedMessage.push_back(key.at(position));
+	//	}
+	//	else {
+	//		codedMessage.push_back(message.at(i));
+	//	}
+	//}
+	//message.swap(codedMessage);
+	//cout << message << endl;
+
+	//cout << "\nDecrypting message ..." << endl;
+	//message.swap(codedMessage);
+	//cout << message << endl;
+
+	
 	string alphabet{ "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" };
 	string key{ "XZNLWEBGJHQDYVTKFUOMPCIASRxznlwebgjhqdyvtkfuompciasr" };
 	string message{};
-	string codedMessage{};
-	
+	string codedmessage{};
 
-	cout << "Enter your secret message: ";
+
+	cout << "enter your secret message: ";
 	getline(cin, message);
 
-	cout << "\nEncrypting message..." << endl;
+	cout << "\nencrypting message..." << endl;
 
-	for (size_t i{ 0 }; i < message.length(); i++) {
-			size_t position = alphabet.find(message.at(i));
+	for (auto c: message) {
+		size_t position = alphabet.find(c);
 		if (position != string::npos) {
-			codedMessage.push_back(key.at(position));
+			char new_char { key.at(position) };
+			codedmessage += new_char;
 		}
 		else {
-			codedMessage.push_back(message.at(i));
+			codedmessage += c;
 		}
 	}
-	message.swap(codedMessage);
-	cout << message << endl;
+	
+	cout << codedmessage << endl;
 
-	cout << "\nDecrypting message ..." << endl;
-	message.swap(codedMessage);
-	cout << message << endl;
-
+	string decrypted_message{};
+	cout << "\ndecrypting message ..." << endl;
+	
+	for (char c : codedmessage) {
+		size_t position = key.find(c);
+		if (position != string::npos) {
+			char new_char{ alphabet.at(position) };
+			decrypted_message += new_char;
+		}
+		else {
+			decrypted_message += c;
+		}
+	}
+	cout << decrypted_message << endl;
+	
 	cout << endl;
 	return 0;
 }
