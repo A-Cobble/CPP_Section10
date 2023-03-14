@@ -34,13 +34,29 @@ int main() {
 	string alphabet{ "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" };
 	string key{ "XZNLWEBGJHQDYVTKFUOMPCIASRxznlwebgjhqdyvtkfuompciasr" };
 	string message{};
+	string codedMessage{};
+	
 
 	cout << "Enter your secret message: ";
-	cin >> message;
+	getline(cin, message);
 
-	cout << "Encrypting message..." << endl;
+	cout << "\nEncrypting message..." << endl;
 
-	cout << "Decrypting message ..." << endl;
+	for (size_t i{ 0 }; i < message.length(); i++) {
+			size_t position = alphabet.find(message.at(i));
+		if (position != string::npos) {
+			codedMessage.push_back(key.at(position));
+		}
+		else {
+			codedMessage.push_back(message.at(i));
+		}
+	}
+	message.swap(codedMessage);
+	cout << message << endl;
+
+	cout << "\nDecrypting message ..." << endl;
+	message.swap(codedMessage);
+	cout << message << endl;
 
 	cout << endl;
 	return 0;
