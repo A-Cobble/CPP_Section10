@@ -1,7 +1,11 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::getline;
 
 int main() {
 
@@ -15,12 +19,12 @@ int main() {
 			cout << " ";
 		}
 
-		for (size_t x{0}; x < (input.size() + 1) - (input.size() - i); x++) {
+		for (size_t x{ 0 }; x < (input.size() + 1) - (input.size() - i); x++) {
 			cout << input[x];
 		}
 
-		for (size_t y{ 0 }; y < input.size() - (input.size() - i); y++) {
-			cout << input[y];
+		for (size_t y{ input.size() - (input.size() - i) }; y > 0; y--) {
+			cout << input[y-1];
 		}
 		cout << endl;
 	}
